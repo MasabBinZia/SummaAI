@@ -7,6 +7,7 @@ import {
   Check,
   SendHorizontal,
 } from "lucide-react";
+import { useLazyGetSummaryQuery } from "@/services/article";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
@@ -21,8 +22,16 @@ const Demo = () => {
     summary: "",
   });
 
+  const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
+
   const handleSubmit = async (e: any) => {
-    alert("submitted");
+    e.preventDefault();
+    const { data } = await getSummary({ articleUrl: article.url });
+    if (data?.summary) {
+      const newArticle = { ...article, summary: data.summary };
+      setArticle(newArticle);
+      console.log(newArticle);
+    }
   };
 
   return (
