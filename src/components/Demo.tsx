@@ -1,10 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
-  CopyIcon,
   Link2Icon,
-  Loader,
-  Check,
   SendHorizontal,
 } from "lucide-react";
 import { useLazyGetSummaryQuery } from "@/services/article";
