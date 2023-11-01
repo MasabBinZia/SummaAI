@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-7xl text-center">
+      <h1 className="text-4xl font-extrabold tracking-tight lg:text-7xl text-center">
         Summarize Articles with <br className="max-md:hidden" />
         <span className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent">
           OpenAI GPT-4

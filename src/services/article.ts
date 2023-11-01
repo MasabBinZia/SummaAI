@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const rapidApiKey: string = process.env.RAPID_API_ARTICLE_KEY || "";
+const rapidApiKey: string =
+  "f1e02de721msha67b305163fedd3p13565ajsnfffcbe49ce8d";
 
 export const articleApi = createApi({
   reducerPath: "articleApi",
@@ -18,7 +19,7 @@ export const articleApi = createApi({
   endpoints: (builder) => ({
     getSummary: builder.query({
       query: (params) =>
-        `/summarize?url=${encodeURIComponent(params.articleUrl)}&lenght=3`,
+        `summarize?url=${encodeURIComponent(params.articleUrl)}`,
     }),
   }),
 });

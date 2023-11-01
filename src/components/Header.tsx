@@ -5,12 +5,15 @@ import { GithubIcon } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-40 w-full">
+    <header className="sticky top-0 z-40 w-full bg-black">
       <div className="container text-white flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         Logo
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
-            <Link href="/" target="_blank">
+            <Link
+              href="https://github.com/MasabBinZia/Article_AI-Summerizer"
+              target="_blank"
+            >
               <div
                 className={buttonVariants({
                   size: "icon",
