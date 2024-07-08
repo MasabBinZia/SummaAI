@@ -4,12 +4,15 @@ import * as z from "zod";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
 import { useToast } from "./ui/use-toast";
+import { SignInButton, useUser } from "@clerk/nextjs";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   url: z.string().url({
@@ -20,6 +23,7 @@ const formSchema = z.object({
 export default function SummaForm() {
   const [url, setUrl] = useState<string>("");
   const { toast } = useToast();
+  const { isLoaded, isSignedIn, user } = useUser();
   const {
     register,
     handleSubmit,
@@ -35,7 +39,7 @@ export default function SummaForm() {
       fetch(`/api/getSummerize?url=${encodeURIComponent(url)}`).then((res) =>
         res.json()
       ),
-    enabled: false, // Disable automatic fetching
+    enabled: false,
   });
 
   const onSubmit = (formData: any) => {
@@ -75,6 +79,7 @@ export default function SummaForm() {
         <Input
           id="url"
           className="md:w-96"
+          disabled={!isLoaded || !isSignedIn}
           placeholder="Enter your url address"
           {...register("url")}
         />
@@ -84,16 +89,22 @@ export default function SummaForm() {
           </p>
         )}
       </div>
-      <Button disabled={isLoading} className="w-full" type="submit">
-        {isLoading ? (
-          <span className="flex gap-1 items-center">
-            <Loader2 className="animate-spin h-4 w-4" />
-            Generating Summary...
-          </span>
-        ) : (
-          "Get Started"
-        )}
-      </Button>
+      {!isLoaded || !isSignedIn ? (
+        <Link href={"/sign-in"} className={cn(buttonVariants(), "w-full")}>
+          Get Started
+        </Link>
+      ) : (
+        <Button disabled={isLoading} className="w-full" type="submit">
+          {isLoading ? (
+            <span className="flex gap-1 items-center">
+              <Loader2 className="animate-spin h-4 w-4" />
+              Generating Summary...
+            </span>
+          ) : (
+            "Generate Now"
+          )}
+        </Button>
+      )}
 
       <Textarea
         name="summary"
