@@ -17,6 +17,7 @@ Effortlessly Summarize Articles with Cutting-Edge AI Technology – Get the Key 
 - Quick and Efficient Summaries
 - User-Friendly Interface
 - Built with Next.js 14 and React
+- TanStack Query for client side data fetching.
 - Styled with ShadcnUI
 - Authentication with Clerk
 - Payment Processing with Stripe
