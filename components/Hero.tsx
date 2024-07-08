@@ -1,11 +1,8 @@
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { ArrowRight, Star } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
-
 import { Section, Container } from "@/components/craft";
-
 import SummaForm from "./Form";
 
 export default function Hero() {
@@ -19,7 +16,7 @@ export default function Hero() {
             size="sm"
             variant="outline"
           >
-            <Link href="">
+            <Link href="https://github.com/MasabBinZia/SummaAI">
               <Star className="w-4 text-yellow-500 mr-2" /> Star on Github{" "}
               <ArrowRight className="ml-2 w-4" />
             </Link>
@@ -30,7 +27,7 @@ export default function Hero() {
               <span className="text-primary">SummaAI.</span>
             </Balancer>
           </h1>
-          <h3 className="text-muted-foreground">
+          <h3 className="text-muted-foreground mb-2">
             <Balancer>
               Effortlessly Summarize Articles with Cutting-Edge AI Technology –
               Get the Key Points in Seconds!

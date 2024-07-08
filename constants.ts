@@ -1,0 +1,45 @@
+export const metadataValues = {
+  keywords: [
+    "AI Article Summarizer",
+    "SummaAI",
+    "AI-powered Summarization",
+    "Article Summarizer Tool",
+    "Quick Article Summary",
+    "Effortless Summarization",
+    "AI-driven Insights",
+    "Summarize Articles Fast",
+    "Content Digest",
+    "Brief AI Summaries",
+    "Smart Content Summary",
+    "AI Text Summarization",
+    "AI for Reading Efficiency",
+    "Streamlined Information",
+    "AI Summarization Solutions",
+    "Automatic Text Summary",
+    "Summarization Software",
+    "Innovative AI Tools",
+    "Content Simplification",
+    "Time-saving Summaries",
+    "AI Content Reduction",
+    "Efficient Information Processing",
+  ],
+  title: {
+    default: "SummaAI - AI-Powered Article Summarizer",
+    template: `%s | SummaAI`,
+  },
+  description:
+    "SummaAI uses cutting-edge AI technology to provide quick and efficient summaries of articles, delivering the key points in seconds.",
+  openGraph: {
+    title: "SummaAI",
+    description:
+      "SummaAI uses cutting-edge AI technology to provide quick and efficient summaries of articles, delivering the key points in seconds.",
+    url: "https://summaai.vercel.app",
+    siteName: "SummaAI",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
