@@ -20,7 +20,6 @@ Effortlessly Summarize Articles with Cutting-Edge AI Technology – Get the Key 
 - TanStack Query for client side data fetching.
 - Styled with ShadcnUI
 - Authentication with Clerk
-- Payment Processing with Stripe
 
 ## Getting Started
 
