@@ -7,7 +7,7 @@
 
 # SummaAI
 
-## Unlock the Power of Information with SummaAI
+## Unlock the Power of Information with SummaAI.
 
 Effortlessly Summarize Articles with Cutting-Edge AI Technology – Get the Key Points in Seconds!
 
